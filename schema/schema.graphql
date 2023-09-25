@@ -1,0 +1,26 @@
+extend schema
+  @link(
+    url: "https://specs.apollo.dev/federation/v2.0"
+    import: ["@key", "@shareable"]
+)
+
+type Mutation {
+  tryCalender(input: calenderInput) : calender
+
+}
+
+type Query {    
+  allCalenders: [calender]
+}
+
+type calender{
+  id:                      Int     
+  task_name:               String
+  email:                   String 
+  created_at:                   String 
+}
+input  calenderInput {
+  task_name:               String
+  email:                   String   
+  created_at:              String   
+}

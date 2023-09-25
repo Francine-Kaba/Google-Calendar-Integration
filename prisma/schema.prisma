@@ -1,0 +1,23 @@
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = "5"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// We could not retrieve columns for the underlying table. Either it has none or you are missing rights to see them. Please check your privileges.
+// model Try {
+// }
+
+
+// model for the google calender integration
+model calender{
+id                Int       @id @default(autoincrement())
+task_name         String
+email             String    @unique
+created_at        DateTime
+}
+
